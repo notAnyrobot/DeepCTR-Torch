@@ -1,0 +1,21 @@
+name: deep-ctr
+channels:
+    - defaults
+    - conda-forge
+dependencies:
+    - python=3.10
+    - numpy
+    - pandas
+    - scipy
+    - matplotlib
+    - scikit-learn
+    - jupyter
+    - pytorch
+    # - torchvision
+    # - torchaudio
+    # - cudatoolkit=11.3 # This is for GPU support, adjust based on your CUDA version
+    - pip
+    - pip:
+          - gym
+          - tensorflow
+          - keras
