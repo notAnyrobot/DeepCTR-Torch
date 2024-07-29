@@ -62,11 +62,16 @@ if __name__ == "__main__":
 
     # 4.Define Model,train,predict and evaluate
 
-    device = "cpu"
     use_cuda = True
     if use_cuda and torch.cuda.is_available():
         print("cuda ready...")
         device = "cuda:0"
+    elif torch.backends.mps.is_available():
+        print("MPS device is available.")
+        mps_device = torch.device("mps")
+        device = "mps"
+    else:
+        device = "cpu"
 
     model = DeepFM(
         linear_feature_columns=linear_feature_columns,
